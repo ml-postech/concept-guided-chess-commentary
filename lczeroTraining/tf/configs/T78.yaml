@@ -1,0 +1,55 @@
+%YAML 1.2
+---
+name: '512x40-t78' # no spaces
+gpu: 0 # 0 or all or 'all'
+dataset:
+  num_chunks: 1_000_000 
+  allow_less_chunks: true # to avoid errors in case, since number of chunks fluctuate little bit
+  train_ratio: 0.9
+  #sort_type: type
+  input_train: 
+        - '/hdd/hdd1/kjc/chess/lczero-training/data/train/*/'
+  input_test: 
+        - '/hdd/hdd1/kjc/chess/lczero-training/data/test/*/'
+  # input_validation: 
+  #       - '/home/admin/lczero-training/validation/*/'
+  train_workers: 24
+  test_workers: 12
+training: 
+    precision: single
+    swa: true
+    swa_output: true
+    swa_max_n: 10
+    swa_steps: 25
+    max_grad_norm: 8.0 #2.75 #6.0
+    batch_size: 4096 
+    num_batch_splits: 2 
+    q_ratio: 0
+    diff_focus_min: 0.025 #1.0
+    diff_focus_slope: 3.0 #0.0
+    lookahead_optimizer: false
+    renorm: true
+    renorm_max_r: 1.0 
+    renorm_max_d: 0.0 
+    test_steps: 250  
+    validation_steps: 250
+    num_test_positions: 131_072
+    train_avg_report_steps: 50 
+    total_steps: 250 
+    shuffle_size: 500_000
+    warmup_steps: 250
+    mask_legal_moves: true
+    lr_values:
+        - 0.0001
+        - 0.0001
+    lr_boundaries:
+        - 340_000
+    policy_loss_weight: 1.0
+    value_loss_weight: 1.0
+    reg_term_weight: 0.08 #0.08
+    moves_left_loss_weight: 1.0
+    path: '/hdd/hdd1/kjc/chess/lczero-training/output'
+model:
+    filters: 512
+    residual_blocks: 40
+    se_ratio: 16
