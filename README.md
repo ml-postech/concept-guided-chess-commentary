@@ -1,6 +1,7 @@
 # Concept-guided Chess Commentary Generation
 
-This is a official repository for "Bridging the Gap between Expert and Language Models: Concept-guided Chess Commentary Generation and Evaluation" ([https://arxiv.org/abs/2410.20811](https://arxiv.org/abs/2410.20811)).
+This is a official repository for "Bridging the Gap between Expert and Language Models: Concept-guided Chess Commentary Generation and Evaluation" ([https://arxiv.org/abs/2410.20811](https://arxiv.org/abs/2410.20811)), which appears in NAACL 2025.
+
 
 The following settings are tested on Ubuntu 20.04.
 
@@ -64,6 +65,18 @@ Update `02_ccc_generation.ipynb`
 Update `03_gcc_eval.ipynb`
 * Add OPENAI_API_KEY in the notebook
 * Read saved comments from log file and evaluate using gcc
+
+## How to cite
+
+```bibtex
+@inproceedings{kim2025ccc,
+  title={Bridging the Gap between Expert and Language Models: Concept-guided Chess Commentary Generation and Evaluation}, 
+  author={Jaechang Kim and Jinmin Goh and Inseok Hwang and Jaewoong Cho and Jungseul Ok},
+  booktitle={NAACL},
+  year={2025},
+  url={https://arxiv.org/abs/2410.20811}, 
+}
+```
 
 ## Note
 The following codes are modified from the original repositories below.
