@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import numpy as np
-from .policy_index import policy_index
+from policy_index import policy_index
 
 columns = 'abcdefgh'
 rows = '12345678'

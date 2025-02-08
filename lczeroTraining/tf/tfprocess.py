@@ -25,10 +25,10 @@ import bisect
 from functools import reduce
 import operator
 
-from . import lc0_az_policy_map
-from . import attention_policy_map as apm
-from .proto import net_pb2 as pb
-from .net import Net
+import lc0_az_policy_map
+import attention_policy_map as apm
+from proto import net_pb2 as pb
+from net import Net
 
 
 def square_relu(x):

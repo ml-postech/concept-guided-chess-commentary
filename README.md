@@ -11,10 +11,10 @@ conda install python=3.7
 conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
 <!-- conda install torch=1.8.2 -->
 pip install tensorflow-gpu==2.5
-pip install jupyter notebook pyyaml jsonlines tqdm
 pip install cairosvg python-chess==0.25
 pip install PyQt5 PyQt5-tools PyQtWebEngine lxml nltk
 pip install wandb scikit-learn
+pip install jupyter notebook pyyaml jsonlines tqdm
 
 pip install -e ./stockfish-py
 ```
@@ -44,17 +44,26 @@ export PYTHONPATH="$(readlink -f ./lczeroTraining/tf):$(readlink -f ./stockfish-
 
 ## 3. Concept vector extraction
 
+* Update paths and setting
+  * stockfish_8_path
+  * tf_ckp_path : lc0 T78 path
+  * sts_path, lichess_puzzle_path : for other concepts
+
 ```
-python probing_svm.py
+python 01_probing_svm.py
 ```
 This will create `cache/*.pkl`
 
 ## 4. Concept-guided chess commentary generation
 
-Update `06_pipeline.ipynb`
+Update `02_ccc_generation.ipynb`
+* Add OPENAI_API_KEY in the notebook
 
 ## 5. Automated chess commentary evaluation
 
+Update `03_gcc_eval.ipynb`
+* Add OPENAI_API_KEY in the notebook
+* Read saved comments from log file and evaluate using gcc
 
 ## Note
 The following codes are modified from the original repositories below.

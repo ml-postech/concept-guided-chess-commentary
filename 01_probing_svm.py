@@ -66,8 +66,8 @@ target_lrs = [1e-4, 1e-6]
 num_epochs = 100
 
 lichess_eval_path = "data/lichess_db_eval.jsonl"
-sts_path = "./STS/STS1-STS15_LAN_v3.epd"
-lichess_puzzle_path = './lichess_db_puzzle.csv'
+sts_path = "data/STS/STS1-STS15_LAN_v3.epd"
+lichess_puzzle_path = 'data/lichess_db_puzzle.csv'
 
 data_size = 200000
 data_ratio = 0.05

@@ -1,6 +1,3 @@
-!*.*
-!*/
-!LICENSE
 
 *.exe
 stockfish-py/Notes/
@@ -25,6 +22,7 @@ docs/
 *.en
 *.html
 *.obj
+*.pkl
 
 outputs/
 wandb/
